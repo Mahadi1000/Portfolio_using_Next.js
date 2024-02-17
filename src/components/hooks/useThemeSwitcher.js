@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const useThemeSwitcher = () => {
-    const preferDarkQuery = "(prefer-color-scheme: dark)";
+    const preferDarkQuery = "(prefers-color-scheme: dark)";
     const [mode, setMode] = useState('');
 
-    // Get user preference from localStorage
-    const userPref = window.localStorage.getItem('theme');
-
     useEffect(() => {
+        const userPref = typeof window !== 'undefined' ? window.localStorage.getItem('theme') : null;
+
         let initialMode;
         if (userPref) {
             initialMode = userPref === 'dark' ? 'dark' : 'light';
@@ -37,12 +36,14 @@ const useThemeSwitcher = () => {
     }, []);
 
     useEffect(() => {
-        if (mode === 'dark') {
-            window.localStorage.setItem('theme', 'dark');
-            document.documentElement.classList.add('dark');
-        } else {
-            window.localStorage.setItem('theme', 'light');
-            document.documentElement.classList.remove('dark');
+        if (typeof window !== 'undefined') {
+            if (mode === 'dark') {
+                window.localStorage.setItem('theme', 'dark');
+                document.documentElement.classList.add('dark');
+            } else {
+                window.localStorage.setItem('theme', 'light');
+                document.documentElement.classList.remove('dark');
+            }
         }
     }, [mode]);
 

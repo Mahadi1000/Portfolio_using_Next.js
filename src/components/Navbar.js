@@ -39,7 +39,7 @@ const Navbar = () => {
   }
 
   return (
-    <header className='w-full px-32 lg:py-7 py-10 font-medium flex items-center justify-between relative'>
+    <header className='w-full lg:py-7 py-8 z-10 font-medium flex items-center px-8 lg:px-20  justify-between relative'>
       <button className=' flex-col justify-center items-center flex lg:hidden' onClick={handleClick}>
         <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? 'rotate-45 translate-y-1':'-translate-y-0.5'} `}></span>
         <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? 'opacity-0': 'opacity-100'}`}></span>
@@ -106,7 +106,7 @@ const Navbar = () => {
   </motion.div>
   : null
 }
-        <div className='absolute left-[45%] top-1 translate-x-[45%]'>
+        <div className='absolute left-[40%] lg:left-[45%] top-1 translate-x-[45%]'>
           <Logo></Logo>
         </div>
     </header>
