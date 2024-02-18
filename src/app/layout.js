@@ -3,6 +3,7 @@ import "./globals.css";
 import {Montserrat} from 'next/font/google'
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import TransitionEffect from "@/components/TransitionEffect";
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -18,11 +19,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
 
       <body className={`${montserrat.variable} font-mont  bg-light min-h-screen dark:bg-dark   w-full `}>
+      <TransitionEffect> 
         <Navbar></Navbar>
         <div>
-        {children}
+       {children}
         </div>
         <Footer></Footer>
+        </TransitionEffect>
         </body>
     </html>
   );
