@@ -5,6 +5,7 @@ import {motion} from 'framer-motion'
 import Layout from '@/components/Layout'
 import profile from "../../../public/pic4.jpg"
 import Image from 'next/image'
+import Skills from '@/components/Skills'
 const quote = {
   initial:{
     opacity:0,
@@ -47,6 +48,7 @@ every project I work on. I look forward to the opportunity to bring my skills an
     <Image  src={profile} alt='Developer Mahadi' className='  object-contain w-full h-auto rounded-2xl' ></Image>
           </div>
          </div>
+         <Skills></Skills>
       </Layout>
     </main>
   )

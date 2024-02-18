@@ -45,7 +45,7 @@ export default function Home() {
          <p className="lg:text-xl md:text-lg self-center text-base font-medium">As a skilled full-stack developer, I am dedicated to turning ideas into innovative web applications. Explore my latest projects and articles, showcasing my expertise in React.js and web development.</p>
          <div className="flex items-center justify-center lg:justify-start 
          gap-4 mt-2">
-          <Link className="flex items-center bg-dark text-light p-1.5 px-4 md:p-2.5 md:px-6 rounded-lg text-[14px] md:text-lg font-semibold hover:bg-light hover:text-dark border dark:border-light border-solid border-transparent hover:border-dark" href="/dummy.pdf" target={"_blank"}>Resume  <LinkArrow/> </Link>
+          <Link className="flex items-center bg-dark text-light p-1.5 px-4 md:p-2.5 md:px-6 rounded-lg text-[14px] md:text-lg font-semibold hover:bg-light hover:text-dark border dark:border-light border-solid border-transparent hover:border-dark" href="./CV.pdf" target={"_blank"}>Resume  <LinkArrow/> </Link>
 
           <Link className="md:text-lg text-[14px] font-medium dark:text-light capitalize text-dark underline" href="/contact">Contact</Link>
          </div>
