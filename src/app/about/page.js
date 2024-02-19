@@ -6,8 +6,6 @@ import Layout from '@/components/Layout'
 import profile from "../../../public/pic4.jpg"
 import Image from 'next/image'
 import Skills from '@/components/Skills'
-import Brain from '@/components/brain'
-import Education from '@/components/Education'
 const quote = {
   initial:{
     opacity:0,
