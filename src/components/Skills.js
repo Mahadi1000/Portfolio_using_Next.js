@@ -30,16 +30,19 @@ const Skill = ({ name, orbitRadius, speed }) => {
 
 const Skills = () => {
   const skillsData = [
-    { name: 'HTML', orbitRadius: 120, speed: 0.2 },
-    { name: 'CSS', orbitRadius: 160, speed: 0.15 },
-    { name: 'JavaScript', orbitRadius: 200, speed: 0.1 },
-    { name: 'ReactJS', orbitRadius: 240, speed: 0.08 },
-    { name: 'NextJS', orbitRadius: 280, speed: 0.06 },
-    { name: 'Node.js', orbitRadius: 320, speed: 0.05 },
-    { name: 'Express.js', orbitRadius: 360, speed: 0.04 },
-    { name: 'MongoDB', orbitRadius: 370, speed: 0.03 },
-    { name: 'Firebase', orbitRadius: 385, speed: 0.02 },
-    { name: 'GraphQL', orbitRadius: 400, speed: 0.015 },
+    { name: 'HTML', orbitRadius: 110, speed: 0.2 },
+    { name: 'CSS', orbitRadius: 150, speed: 0.15 },
+    { name: 'JavaScript', orbitRadius: 180, speed: 0.1 },
+    { name: 'ReactJS', orbitRadius: 220, speed: 0.08 },
+    { name: 'TypeScript', orbitRadius: 250, speed: 0.07 },
+    { name: 'NextJS', orbitRadius: 270, speed: 0.06 },
+    { name: 'Redux', orbitRadius: 290, speed: 0.05 },
+    { name: 'Node.js', orbitRadius: 320, speed: 0.04 },
+    { name: 'Express.js', orbitRadius: 360, speed: 0.03 },
+    { name: 'MongoDB', orbitRadius: 370, speed: 0.02 },
+    { name: 'SQL', orbitRadius: 380, speed: 0.01 },
+    { name: 'Firebase', orbitRadius: 390, speed: 0.007 },
+    { name: 'Mongoose', orbitRadius: 400, speed: 0.005 },
     // Add more skills with different orbitRadius and speed as needed
   ];
 
@@ -56,6 +59,31 @@ const Skills = () => {
         {skillsData.map((skill, index) => (
           <Skill key={index} name={skill.name} orbitRadius={skill.orbitRadius} speed={skill.speed} />
         ))}
+      </div>
+      <div className='flex justify-center w-full items-center mt-28'>
+         {/* SKILL SCROLL SVG */}
+         <motion.svg
+              initial={{ opacity: 0.2, y: 0 }}
+              animate={{ opacity: 1, y: "10px" }}
+              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width={50}
+              height={50}
+            >
+              <path
+                d="M5 15C5 16.8565 5.73754 18.6371 7.05029 19.9498C8.36305 21.2626 10.1435 21.9999 12 21.9999C13.8565 21.9999 15.637 21.2626 16.9498 19.9498C18.2625 18.6371 19 16.8565 19 15V9C19 7.14348 18.2625 5.36305 16.9498 4.05029C15.637 2.73754 13.8565 2 12 2C10.1435 2 8.36305 2.73754 7.05029 4.05029C5.73754 5.36305 5 7.14348 5 9V15Z"
+                stroke="#000000"
+                strokeWidth="1"
+              ></path>
+              <path d="M12 6V14" stroke="#000000" strokeWidth="1"></path>
+              <path
+                d="M15 11L12 14L9 11"
+                stroke="#000000"
+                strokeWidth="1"
+              ></path>
+            </motion.svg>
       </div>
     </>
   );
