@@ -13,7 +13,7 @@ const quote = {
   animate:{
     opacity:1,
     transition:{
-      delay:1.5,
+      delay:1,
     }
   }
 }
@@ -139,7 +139,9 @@ every project I work on. I look forward to the opportunity to bring my skills an
                   {/* LINE */}
                   <div className="w-1 h-full bg-gray-600 rounded relative">
                     {/* LINE CIRCLE */}
-                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2">
+                      <div className='w-2 h-2 rounded-full bg-primary ring-1 fill-primary left-1.5 top-1.5 animate-pulse absolute'></div>
+                    </div>
                   </div>
                 </div>
                 {/* RIGHT */}
@@ -154,7 +156,9 @@ every project I work on. I look forward to the opportunity to bring my skills an
                   {/* LINE */}
                   <div className="w-1 h-full bg-gray-600 rounded relative">
                     {/* LINE CIRCLE */}
-                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2">
+                    <div className='w-2 h-2 rounded-full bg-primary ring-1 fill-primary left-1.5 top-1.5 animate-pulse absolute'></div>
+                    </div>
                   </div>
                 </div>
                 {/* RIGHT */}
@@ -200,7 +204,9 @@ every project I work on. I look forward to the opportunity to bring my skills an
                   {/* LINE */}
                   <div className="w-1 h-full bg-gray-600 rounded relative">
                     {/* LINE CIRCLE */}
-                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2">
+                    <div className='w-2 h-2 rounded-full bg-primary ring-1 fill-primary left-1.5 top-1.5 animate-pulse absolute'></div>
+                    </div>
                   </div>
                 </div>
                 {/* RIGHT */}
@@ -214,7 +220,9 @@ every project I work on. I look forward to the opportunity to bring my skills an
                   {/* LINE */}
                   <div className="w-1 h-full bg-gray-600 rounded relative">
                     {/* LINE CIRCLE */}
-                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2">
+                    <div className='w-2 h-2 rounded-full bg-primary ring-1 fill-primary left-1.5 top-1.5 animate-pulse absolute'></div>
+                    </div>
                   </div>
                 </div>
                 {/* RIGHT */}
