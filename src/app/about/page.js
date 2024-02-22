@@ -30,16 +30,16 @@ const AboutPage = () => {
   const isExperienceRefInView = useInView(experienceRef, { margin: "-100px" });
   return (
     <main className=''>
-      <Layout className='pt-14'>
+      <Layout className='pt-14 px-4 lg:px-20'>
       <motion.h1
           variants={quote}
           initial="initial"
           animate="animate"
-           className="text-2xl inline-block py-2 w-full uppercase text-dark mb-14 text-center lg:text-4xl xl:text-8xl dark:text-light font-bold">
+           className="text-3xl inline-block py-2 w-full uppercase text-dark mb-14 text-center lg:text-4xl xl:text-8xl dark:text-light font-bold">
           
           Passion Fuels Purpose!  
          </motion.h1>
-         <div className='grid w-full md:grid-cols-8 gap-24'>
+         <div className='grid content-center w-full md:grid-cols-8 gap-24'>
           <div className='col-span-4 order-2 md:order-none dark:text-light flex flex-col items-start justify-start'>
             <h2 className='mb-4 text-lg dark:text-light font-bold uppercase text-dark/75'>Biography</h2>
             <p className='font-medium'>Hi, I'm Mahadi Hasan, a web developer and designer with a passion for creating beautiful, functional, 
@@ -84,7 +84,7 @@ every project I work on. I look forward to the opportunity to bring my skills an
             </motion.svg>
       </div>
          <Skills></Skills>
-        <div className={`h-full mt-16 overflow-scroll lg:flex" ref={containerRef}`}>
+        <div className={`h-full my-24 overflow-scroll lg:flex" ref={containerRef}`}>
         <div
             className="flex flex-col gap-12 justify-center pb-48"
             ref={experienceRef}
@@ -94,7 +94,7 @@ every project I work on. I look forward to the opportunity to bring my skills an
               initial={{ x: "-300px" }}
               animate={isExperienceRefInView ? { x: "0" } : {}}
               transition={{ delay: 0.2 }}
-              className="font-bold text-dark/75 text-2xl"
+              className="font-bold text-dark/75 text-xl md:text-2xl"
             >
               EXPERIENCE
             </motion.h1>
@@ -102,7 +102,7 @@ every project I work on. I look forward to the opportunity to bring my skills an
               initial={{ x: "300px" }}
               animate={isExperienceRefInView ? { x: "0" } : {}}
               transition={{ delay: 0.2 }}
-              className="font-bold uppercase text-dark/75 text-end text-2xl"
+              className="font-bold uppercase text-dark/75 text-end text-xl lg:text-2xl"
             >
               Education
             </motion.h1>

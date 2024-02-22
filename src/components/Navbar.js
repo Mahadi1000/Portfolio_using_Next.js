@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import {motion} from 'framer-motion'
 import Logo from './Logo'
 import { usePathname } from "next/navigation";
-import { DribbbleIcon, GithubIcon, LinkedInIcon, MoonIcon, PinterestIcon, SunIcon, TwitterIcon } from './Icons';
+import FacebookIcon, { DribbbleIcon, GithubIcon, LinkedInIcon, MoonIcon, SunIcon, TwitterIcon } from './Icons';
 import useThemeSwitcher from './hooks/useThemeSwitcher'
 const NavLink = ({ link }) => {
   const pathName = usePathname();
@@ -40,10 +40,10 @@ const Navbar = () => {
 
   return (
     <header className='w-full lg:py-7 py-8 z-10 font-medium flex items-center px-8 lg:px-24  justify-between relative'>
-      <button className=' flex-col justify-center items-center flex lg:hidden' onClick={handleClick}>
-        <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? 'rotate-45 translate-y-1':'-translate-y-0.5'} `}></span>
-        <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? 'opacity-0': 'opacity-100'}`}></span>
-        <span className={`bg-dark dark:bg-light block h-0.5 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? '-rotate-45 -translate-y-1':'translate-y-0.5'}`}></span>
+      <button className=' flex-col justify-center flex lg:hidden' onClick={handleClick}>
+        <span className={`bg-dark dark:bg-light block h-1 w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? 'rotate-45 translate-y-1':'-translate-y-0.5'} `}></span>
+        <span className={`bg-dark dark:bg-light block h-1 w-5 rounded-sm transition-all duration-300 ease-out ${isOpen ? 'opacity-0': 'opacity-100'}`}></span>
+        <span className={`bg-dark dark:bg-light block h-1  w-6 rounded-sm transition-all duration-300 ease-out ${isOpen ? '-rotate-45 -translate-y-1':'translate-y-0.5'}`}></span>
 
       </button>
 
@@ -58,10 +58,13 @@ const Navbar = () => {
 
         <nav className='flex items-center justify-center flex-wrap'>
         <motion.a href="/" target={"_blank"} whileHover={{y:-3}} whileTap={{scale:0.9}} className='w-6 mr-3'> <TwitterIcon></TwitterIcon> </motion.a>
-        <motion.a href="/" target={"_blank"} className='w-6 mr-3 dark:bg-light rounded-full' whileHover={{y:-3}} whileTap={{scale:0.9}}><GithubIcon></GithubIcon></motion.a>
-        <motion.a href="/" target={"_blank"}className='w-6 mx-3' whileHover={{y:-3}} whileTap={{scale:0.9}}><LinkedInIcon></LinkedInIcon>
+        <motion.a href="https://github.com/Mahadi1000" target={"_blank"} className='w-6 mr-3 dark:bg-light rounded-full' whileHover={{y:-3}} whileTap={{scale:0.9}}><GithubIcon></GithubIcon></motion.a>
+        <motion.a href="https://www.linkedin.com/in/mahadi-hasan-7027b72b4/" target={"_blank"}className='w-6 mx-3' whileHover={{y:-3}} whileTap={{scale:0.9}}>
+          <LinkedInIcon></LinkedInIcon>
         </motion.a>
-        <motion.a href="/" target={"_blank"} className='w-6 mx-3' whileHover={{y:-3}} whileTap={{scale:0.9}}><PinterestIcon></PinterestIcon></motion.a>
+        <motion.a href="https://www.facebook.com/profile.php?id=100055445923322" target={"_blank"} className='w-6 mx-3' whileHover={{y:-3}} whileTap={{scale:0.9}}>
+          <FacebookIcon></FacebookIcon>
+          </motion.a>
         <motion.a href="/" target={"_blank"} className='w-6 ml-3' whileHover={{y:-3}} whileTap={{scale:0.9}}><DribbbleIcon></DribbbleIcon>
         </motion.a>
         <button className= {`ml-3 flex items-center justify-center rounded-full p-1 ${mode === "light"?"bg-dark text-light" : "bg-light text-dark" } `}
@@ -93,7 +96,7 @@ const Navbar = () => {
       <motion.a href="/" target={"_blank"} className='w-6 mr-3 bg-light rounded-full' whileHover={{y:-3}} whileTap={{scale:0.9}}><GithubIcon></GithubIcon></motion.a> 
       <motion.a href="/" target={"_blank"}className='w-6 mx-3' whileHover={{y:-3}} whileTap={{scale:0.9}}><LinkedInIcon></LinkedInIcon>
       </motion.a>
-      <motion.a href="/" target={"_blank"} className='w-6 mx-3' whileHover={{y:-3}} whileTap={{scale:0.9}}><PinterestIcon></PinterestIcon></motion.a>
+      <motion.a href="/" target={"_blank"} className='w-6 mx-3' whileHover={{y:-3}} whileTap={{scale:0.9}}><FacebookIcon></FacebookIcon></motion.a>
       <motion.a href="/" target={"_blank"} className='w-6 ml-3' whileHover={{y:-3}} whileTap={{scale:0.9}}><DribbbleIcon></DribbbleIcon>
       </motion.a>
       <button className= {`ml-3 flex items-center justify-center rounded-full p-1 ${mode === "light"?"bg-dark text-light" : "bg-light text-dark" } `}
@@ -106,7 +109,7 @@ const Navbar = () => {
   </motion.div>
   : null
 }
-        <div className='absolute left-[40%] lg:left-[45%] top-1 translate-x-[45%]'>
+        <div className='absolute left-[35%] md:left-[42%] lg:left-[45%] top-1 translate-x-[45%]'>
           <Logo></Logo>
         </div>
     </header>

@@ -1,10 +1,24 @@
-import React from 'react';
+"use client"
+
+import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
+const MoblieSkill = ({name,x,y})=>{
+  return(
+      <motion.div className='flex items-center justify-center rounded-full font-semibold bg-dark cursor-pointer text-light px-5 py-3 shadow-dark absolute'
+      initial={{x:0, y:0}}
+      animate={{x:x, y:y}}
+      transition={{duration:1.5}}
+      whileHover={{scale:"1.05"}}
+      >
+         {name}
+      </motion.div>
+  )
+}
 
 const Skill = ({ name, orbitRadius, speed }) => {
   const orbitControls = useAnimation();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const updateOrbit = () => {
       const angle = (speed * Date.now()) / 1000;
       orbitControls.start({
@@ -46,10 +60,12 @@ const Skills = () => {
     // Add more skills with different orbitRadius and speed as needed
   ];
 
+
   return (
     <>
-      <h1 className='mt-52 font-bold text-7xl text-center uppercase dark:text-light '>Skills</h1>
-      <div className='w-full h-screen relative flex items-center justify-center rounded-full bg-circularLight'>
+      <h1 className='mt-52 font-bold text-4xl md:text-5xl lg:text-7xl text-center uppercase dark:text-light'>Skills</h1>
+      {/* laptop and desktop */}
+      <div className='w-full h-screen relative hidden lg:flex items-center justify-center rounded-full bg-circularLight'>
         <motion.div
           className='flex items-center justify-center rounded-full font-semibold bg-dark cursor-pointer text-light p-6 shadow-dark'
           whileHover={{ scale: 1.05 }}
@@ -60,7 +76,26 @@ const Skills = () => {
           <Skill key={index} name={skill.name} orbitRadius={skill.orbitRadius} speed={skill.speed} />
         ))}
       </div>
-      <div className='flex justify-center w-full items-center mt-28'>
+          {/* mobile devices */}
+      <div className='w-full h-screen relative lg:hidden flex items-center justify-center rounded-full bg-circularLight'>
+    <motion.div className='flex items-center justify-center rounded-full font-semibold bg-dark cursor-pointer text-light p-6 shadow-dark'
+    whileHover={{scale:"1.05"}}
+    >
+        Web 
+    </motion.div>
+    <MoblieSkill name="HTML" x="-21vw" y="2vw" />
+    <MoblieSkill name="CSS" x="-4vw" y="-8vw" />
+    <MoblieSkill name="JavaScript" x="20vw" y="6vw" />
+    <MoblieSkill name="ReactJS" x="-0vw" y="12vw" />
+    <MoblieSkill name="NextJS" x="-20vw" y="-17vw" />
+    <MoblieSkill name="Mongoose" x="15vw" y="-14vw" />
+    <MoblieSkill name="Web Design" x="32vw" y="-8vw" />
+    <MoblieSkill name="Redux" x="0vw" y="21vw" />
+    <MoblieSkill name="Firebase" x="-25vw" y="20vw" />
+    <MoblieSkill name="Tailwind Css" x="18vw" y="14vw" />
+    </div> 
+
+      <div className='flex justify-center w-full items-center mt-10'>
          {/* SKILL SCROLL SVG */}
          <motion.svg
               initial={{ opacity: 0.2, y: 0 }}

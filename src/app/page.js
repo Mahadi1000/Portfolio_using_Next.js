@@ -25,11 +25,11 @@ export default function Home() {
     <>
     <TransitionEffect></TransitionEffect>
     <main className="flex flex-col lg:flex-row dark:text-light items-center text-dark w-full min-h-screen">
-     <Layout className="pt-5 md:p-16 sm:pt-8 lg:pt-0 min-h-screen">
+     <Layout className="pt-5 p-5 md:p-16 sm:pt-8 lg:pt-0 min-h-screen">
       <motion.div
       initial={{ y: "-200vh" }}
       animate={{ y: "0%" }}
-      transition={{ duration: 1 }} className="flex flex-col  md:justify-center lg:flex-row items-center lg:justify-between w-full">
+      transition={{ duration: 1 }} className="flex flex-col  md:justify-center  lg:flex-row items-center lg:justify-between w-full">
         <div className="lg:w-1/2 w-full lg:flex md:hidden py-5 md:py-0  ">
           <Image src={profileImage} alt="Developer Mahadi" className="w-full h-auto" />
         </div>
@@ -38,7 +38,7 @@ export default function Home() {
           variants={quote}
           initial="initial"
           animate="animate"
-           className="text-2xl inline-block py-2 w-full uppercase text-dark lg:text-4xl xl:text-6xl dark:text-light font-bold">
+           className="text-3xl inline-block py-2 w-full uppercase text-dark lg:text-4xl xl:text-6xl dark:text-light font-bold">
           
          Turning Vision Into Reality With Code And Design. 
          </motion.h1>
@@ -52,7 +52,7 @@ export default function Home() {
         </div>
       </motion.div>
      </Layout>
-     <HireMe></HireMe>
+     <HireMe className="lg:flex fixed hidden lg:left-4 lg:bottom-3 overflow-hidden right-5"></HireMe>
     </main>
     </>
   );
