@@ -4,48 +4,110 @@ import Link from 'next/link'
 import React, { useRef } from 'react'
 import { motion, useScroll, useTransform } from "framer-motion";
 import HireMe from '@/components/HireMe';
+import { HeroParallax } from '@/components/HeroParallax';
 
   
-const items = [
+const item = [
   {
-    id: 1,
-    color: "from-red-300 to-blue-300",
-    title: "React Commerce",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/18073372/pexels-photo-18073372/free-photo-of-young-man-sitting-in-a-car-on-a-night-street.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "/",
+    title: "School Management System",
+    link: "https://school-management-omega-ruddy.vercel.app/",
+    thumbnail: "/p2.png",
+    description:
+      "This is a full stack shchool management software for students.",
+  },
+
+  {
+    title: "Learning Management System Dashboard",
+    link: "https://onnorokom-programming.vercel.app/courses",
+    thumbnail: "/p4.png",
+    description:
+      "This is a Learning Management project for Youtube channel where I teaches you to learn how to be a better programmer.",
   },
   {
-    id: 2,
-    color: "from-blue-300 to-violet-300",
-    title: "Next.js Medium Blog",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "/",
+    title: "Fuzzie Automation",
+    link: "https://fuzzie-six.vercel.app",
+    thumbnail: "/p12.png",
+    description:
+      "This is a an Automation website where you can automate your work by it. You can connect your drive, discord, slack, notion on it.",
   },
   {
-    id: 3,
-    color: "from-violet-300 to-purple-300",
-    title: "Vanilla Book App",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
-    link: "/",
+    title: "URL Shortener",
+    link: "https://url-shortener-omega-three.vercel.app/",
+    thumbnail: "/p11.png",
+    description:
+      "This is a an URL Shortener project with dashboard. You can shorten your URL.",
   },
   {
-    id: 4,
-    color: "from-purple-300 to-red-300",
-    title: "Spotify Music App",
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.",
-    img: "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    link: "/",
+    title: "Blog",
+    link: "https://onnorokom-programming.vercel.app/blog",
+    thumbnail: "/p6.png",
+  },
+
+  {
+    title: "Agency Website",
+    link: "https://softeins-lab.com/",
+    thumbnail: "/p1.png",
+  },
+  {
+    title: "Visa Website",
+    link: "https://evisa-welcomtoservia.com/",
+    thumbnail: "/p10.png",
+    description: "This is a Visa processing website for an agency.",
+  },
+
+  {
+    title: "Nextwave",
+    link: "https://next-brainwave.vercel.app/",
+    thumbnail: "/p9.png",
+  },
+  {
+    title: "Metaverse",
+    link: "https://metaverse-ui-puce.vercel.app/",
+    thumbnail: "/p15.png",
+  },
+  {
+    title: "Apple Website Clone",
+    link: "https://apple-clone-murex.vercel.app/",
+    thumbnail: "/p14.png",
+  },
+  {
+    title: "Voice and Video calling app",
+    link: "https://live-five-beige.vercel.app/",
+    thumbnail: "/p5.png",
+    description:
+      "This is a full stack zoom clone website built by Next js",
+  },
+
+  {
+    title: "Blog",
+    link: "https://onnorokom-programming.vercel.app/blog",
+    thumbnail: "/p6.png",
+  },
+  {
+    title: "Urban Market",
+    link: "https://urban-market-sl.vercel.app",
+    thumbnail: "/p7.png",
+    description: "This is a full stack next js e-commerce website ",
+  },
+  {
+    title: "FigTree Property",
+    link: "https://figtreeproperty.com",
+    thumbnail: "/p8.png",
   },
 ];
 
 const ProjectsPage = () => {
   const ref = useRef();
+  const containerRef = useRef(null);
+  
+  // Initialize scrollYProgress before using it
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
 
-  const { scrollYProgress } = useScroll({ target: ref });
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-80%"]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
   return (
     <motion.div
@@ -55,38 +117,61 @@ const ProjectsPage = () => {
       transition={{ duration: 1 }}
     >
       <div className="h-[600vh] relative" ref={ref}>
-        <div className="w-screen dark:text-white md:text-6xl lg:h-[calc(100vh-6rem)] flex items-center text-dark font-semibold justify-center py-40 lg:py-0 text-5xl lg:text-8xl text-center">
-          My Works
-        </div>
-        <div className="sticky top-0 flex h-screen gap-4 items-center overflow-hidden">
-          <motion.div style={{ x }} className="flex">
-            <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-r from-purple-300 to-red-300" />
-            {items.map((item) => (
-              <div
-                className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
-                key={item.id}
-              >
-                <div className="flex flex-col gap-8 text-white">
-                  <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
-                    {item.title}
-                  </h1>
-                  <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
-                    <Image src={item.img} alt="" fill />
+        <motion.h2
+          className="text-5xl md:text-7xl dark:text-white font-black text-center my-12 text-black"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          My Latest Projects
+        </motion.h2>
+        <div className=" py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              ref={containerRef}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              style={{ y }}
+            >
+              {item.map((product, index) => (
+                <motion.div
+                  key={product.title}
+                  className="group relative overflow-hidden rounded-lg shadow-lg"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <Image
+                    src={product.thumbnail}
+                    alt={product.title}
+                    width={600}
+                    height={400}
+                    className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 group-hover:opacity-80 transition-opacity duration-300" />
+                  <div className="absolute inset-0 flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <h3 className="text-xl font-bold mb-2 text-white">
+                      {product.title}
+                    </h3>
+                    <p className="text-gray-200 py-2">{product.description}</p>
+                    <Link
+                      href={product.link}
+                      className="inline-block bg-white text-black px-4 py-2 rounded-full font-semibold text-sm hover:bg-gray-200 transition-colors"
+                    >
+                      View Project
+                    </Link>
                   </div>
-                  <p className="w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]">
-                    {item.desc}
-                  </p>
-                  <Link href={item.link} className="flex justify-end">
-                    <button className="p-2 text-sm md:p-4 md:text-md lg:p-8 lg:text-lg bg-white text-gray-600 font-semibold m-4 rounded">See Demo</button>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </motion.div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </div>
+        <HeroParallax projects={item} />
       </div>
       <div className="w-screen h-screen flex flex-col gap-16 items-center justify-center text-center">
-        <h1 className="lg:text-7xl md:text-4xl text-3xl text-wrap dark:text-white text-dark font-semibold mt-10">Do you have a project?</h1>
+        <h1 className="lg:text-7xl md:text-4xl text-3xl text-wrap dark:text-white text-dark font-bold uppercase ">
+          Do you have a project?
+        </h1>
         <div className="relative">
           <motion.svg
             animate={{ rotate: 360 }}
@@ -101,7 +186,10 @@ const ProjectsPage = () => {
               />
             </defs>
             <text fill="#000">
-              <textPath xlinkHref="#circlePath" className="text-xl font-bold dark:text-light">
+              <textPath
+                xlinkHref="#circlePath"
+                className="text-xl font-bold dark:text-light"
+              >
                 MERN Stack Developer.Web Designer.
               </textPath>
             </text>
@@ -109,15 +197,14 @@ const ProjectsPage = () => {
           <Link
             href="/contact"
             className="w-24 h-24 md:w-32 md:h-32 font-bold
-            text-xl absolute top-0 left-0 right-0 bottom-0 m-auto bg-dark hover:bg-light hover:text-dark hover:border-dark hover:border-solid border duration-300 dark:text-dark text-light rounded-full flex items-center justify-center"
+            text-xl absolute top-0 left-0 right-0 bottom-0 m-auto bg-dark hover:bg-light hover:text-dark hover:border-dark hover:border-solid border duration-300 dark:text-white text-light rounded-full flex items-center justify-center "
           >
             Hire Me
           </Link>
         </div>
-
       </div>
     </motion.div>
-  )
+  );
 }
 
 export default ProjectsPage
